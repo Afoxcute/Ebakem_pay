@@ -1,0 +1,66 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- Custom styles -->
+<style>
+  .invoice {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .invoice h1 {
+    margin-top: 0;
+  }
+
+  .invoice p {
+    margin-bottom: 0;
+  }
+
+  .invoice-total {
+    font-weight: bold;
+  }
+</style>
+
+<!-- Invoice form -->
+<div
+          class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 text-center mt-5 pb-4 text-primary"
+        >
+          <h1 class="h1">Purchase Form</h1>
+        </div>
+<form method="post" class="mx-auto" style="max-width: 500px;">
+  <div class="form-group">
+    <label for="item_name">Item name</label>
+    <input type="text" class="form-control" id="item_name" name="item_name" required>
+  </div>
+  <div class="form-group">
+    <label for="item_price">Item price (dollars)</label>
+    <input type="number" class="form-control" id="item_price" name="item_price" required>
+  </div>
+  <div class="form-group">
+    <label for="customer_name">Customer name</label>
+    <input type="text" class="form-control" id="customer_name" name="customer_name" required>
+  </div>
+  <div class="form-group">
+    <label for="customer_phone">Customer phone</label>
+    <input type="text" class="form-control" id="customer_phone" name="customer_phone" required>
+  </div>
+  <div class="form-group">
+    <label for="customer_email">Customer email</label>
+    <input type="email" class="form-control" id="customer_email" name="customer_email" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Generate invoice</button>
+</form>
+</div>
+
+<!-- Invoice -->
+<div class="invoice d-none">
+  <!-- Invoice header -->
+  <div class="d-flex justify-content-between mb-3">
+    <!-- Invoice logo -->
+    <img src="https://via.placeholder.com/150x50" alt="Invoice logo">
+    <!-- Invoice details -->
+    <div class="text-right">
+      <h1>Invoice</h1>
+      <p class="text-muted">Invoice #12345</p>
+      <p class="text-muted">Date: <?php echo date("Y-m-
